@@ -59,11 +59,11 @@ spec:
                 name: harness-secrets
                 key: mongodbPassword
           - name: MONGO_URI
-            value: 'mongodb://$(MONGODB_USERNAME):$(MONGODB_PASSWORD)@mongodb-replicaset-chart-0.mongodb-replicaset-chart.{{ .Release.Namespace }}.svc:27017/notifications?authSource=admin'
+            value: {{ include "harnesscommon.database.mongo" (dict "database" "notifications" "context" $) }}
           - name: AUDIT_MONGO_URI
-            value: 'mongodb://$(MONGODB_USERNAME):$(MONGODB_PASSWORD)@mongodb-replicaset-chart-0.mongodb-replicaset-chart.{{ .Release.Namespace }}.svc:27017/audits?authSource=admin'
+            value: {{ include "harnesscommon.database.mongo" (dict "database" "audits" "context" $) }}
           - name: RESOURCE_GROUP_MONGO_URI
-            value: 'mongodb://$(MONGODB_USERNAME):$(MONGODB_PASSWORD)@mongodb-replicaset-chart-0.mongodb-replicaset-chart.{{ .Release.Namespace }}.svc:27017/resource-groups?authSource=admin'    
+            value: {{ include "harnesscommon.database.mongo" (dict "database" "resource-groups" "context" $) }}
         envFrom:
         - configMapRef:
             name: platform-service
