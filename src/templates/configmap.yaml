@@ -21,14 +21,14 @@ data:
   ACCESS_CONTROL_ENABLED: 'true'
   LOGGING_LEVEL: {{ .Values.appLogLevel }}
   DISTRIBUTED_LOCK_IMPLEMENTATION: REDIS
-  MANAGER_CLIENT_BASEURL: '{{ .Values.global.loadbalancerURL }}/api/'
-  RBAC_URL: '{{ .Values.global.loadbalancerURL }}/ng/api/'
-  ACCESS_CONTROL_BASE_URL: '{{ .Values.global.loadbalancerURL }}/authz/api/'
-  RESOURCE_GROUP_CLIENT_BASE_URL: '{{ .Values.global.loadbalancerURL }}/resourcegroup/api/'
-  NG_MANAGER_CLIENT_BASEURL: '{{ .Values.global.loadbalancerURL }}/ng/api/'
-  PIPELINE_SERVICE_CLIENT_BASEURL: '{{ .Values.global.loadbalancerURL }}/pipeline/api/'
-  TEMPLATE_SERVICE_CLIENT_BASEURL: '{{ .Values.global.loadbalancerURL }}/template/api/'
-  AUDIT_CLIENT_BASEURL: '{{ .Values.global.loadbalancerURL }}/audit/api/'
+  MANAGER_CLIENT_BASEURL: 'http://harness-manager.{{ .Release.Namespace }}.svc.cluster.local:9090/api/'
+  RBAC_URL: 'http://ng-manager.{{ .Release.Namespace }}.svc.cluster.local:7090/api/'
+  ACCESS_CONTROL_BASE_URL: http://accesscontrol-service.{{ .Release.Namespace }}.svc.cluster.local:9006/api/
+  RESOURCE_GROUP_CLIENT_BASE_URL: http://platform-service.{{ .Release.Namespace }}.svc.cluster.local:9005/api/
+  NG_MANAGER_CLIENT_BASEURL: 'http://ng-manager.{{ .Release.Namespace }}.svc.cluster.local:7090/api/'
+  PIPELINE_SERVICE_CLIENT_BASEURL: 'http://pipeline-service.{{ .Release.Namespace }}.svc.cluster.local:12001/api/'
+  TEMPLATE_SERVICE_CLIENT_BASEURL: http://template-service.{{ .Release.Namespace }}.svc.cluster.local:15002/api/
+  AUDIT_CLIENT_BASEURL: http://accesscontrol-service.{{ .Release.Namespace }}.svc.cluster.local:9006/api/
   TEMPLATE_SERVICE_BASE_URL: '{{ .Values.global.loadbalancerURL }}/templates/api/'
   MEMORY: {{ .Values.java.memory | quote }}
 
