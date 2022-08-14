@@ -3,16 +3,16 @@ entries:
   platform-service:
   - apiVersion: v2
     appVersion: "75202"
-    created: "2022-08-14T20:42:21.148504+05:30"
+    created: "2022-08-14T21:11:34.099512+05:30"
     dependencies:
     - name: harness-common
       repository: https://harness.github.io/helm-common/charts
       version: 0.1.1
     description: A Helm chart for Kubernetes
-    digest: 32e650026860fc838ff48ed489edcaae5ec9ead81dad3a617c305f96b223f0e6
+    digest: f721c46284a9ba9100293fcfd0fac00cb8343b43553b0ed3e43875c443cdac3e
     name: platform-service
     type: application
     urls:
     - platform-service-0.1.0.tgz
     version: 0.1.0
-generated: "2022-08-14T20:42:21.147205+05:30"
+generated: "2022-08-14T21:11:34.098345+05:30"
