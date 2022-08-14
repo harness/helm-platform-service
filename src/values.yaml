@@ -11,9 +11,7 @@ image:
   repository: harness/platform-service-signed
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "76201"
-
-version: 1.0.76019
+  tag: ""
 
 appLogLevel: INFO
 
@@ -61,10 +59,10 @@ autoscaling:
   # targetMemoryUtilizationPercentage: 80
 
 smtp:
-  host: "dummy"
-  port: "465"
-  password: "dummy"
-  user: "dummy"
+  host: ""
+  port: ""
+  password: ""
+  user: ""
   ssl: true
   
 nodeSelector: {}
