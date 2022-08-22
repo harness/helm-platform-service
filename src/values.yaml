@@ -13,8 +13,6 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "76201"
 
-version: 1.0.76019
-
 appLogLevel: INFO
 
 java:
@@ -61,10 +59,10 @@ autoscaling:
   # targetMemoryUtilizationPercentage: 80
 
 smtp:
-  host: "dummy"
-  port: "465"
-  password: "dummy"
-  user: "dummy"
+  host: ""
+  port: ""
+  password: ""
+  user: ""
   ssl: true
   
 nodeSelector: {}
