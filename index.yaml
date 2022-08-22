@@ -1,0 +1,21 @@
+apiVersion: v1
+entries:
+  platform-service:
+  - apiVersion: v2
+    appVersion: "75202"
+    created: "2022-08-22T22:47:27.465326984Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      version: 2.x.x
+    - name: harness-common
+      repository: https://harness.github.io/helm-common
+      version: 1.x.x
+    description: A Helm chart for Kubernetes
+    digest: 67290027b4b1a61eabe32f15ca6b7ca23bd569d48be3191897e4df96331f69eb
+    name: platform-service
+    type: application
+    urls:
+    - https://github.com/harness/helm-platform-service/releases/download/platform-service-0.2.0/platform-service-0.2.0.tgz
+    version: 0.2.0
+generated: "2022-08-22T22:47:27.465340584Z"
