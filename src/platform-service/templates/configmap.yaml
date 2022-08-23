@@ -2,7 +2,7 @@ apiVersion: v1
 data:
   DEPLOY_MODE: KUBERNETES_ONPREM
   GRPC_MANAGER_TARGET: harness-manager:9879
-  GRPC_MANAGER_AUTHORITY: default-authority.harness.io
+  GRPC_MANAGER_AUTHORITY: harness-manager:9879
   SMTP_HOST: {{ .Values.smtp.host | quote}}
   SMTP_PORT: {{ .Values.smtp.port | quote}}
   SMTP_PASSWORD: {{ .Values.smtp.password | quote}}
