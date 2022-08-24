@@ -34,7 +34,14 @@ spec:
       serviceAccountName: {{ include "platform-service.serviceAccountName" . }}
       terminationGracePeriodSeconds: 30
       securityContext:
-        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}    
+      initContainers:
+      - name: wait-for-mongo
+        image: {{ include "common.images.image" (dict "imageRoot" .Values.waitForInitContainer.image "global" .Values.global) }}
+        imagePullPolicy: IfNotPresent
+        args:
+          - "pod"
+          - "-lapp=mongodb-replicaset"
       containers:
       - name: platform-service
         image: {{ include "common.images.image" (dict "imageRoot" .Values.image "global" .Values.global) }}
