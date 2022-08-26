@@ -23,13 +23,13 @@ data:
   DISTRIBUTED_LOCK_IMPLEMENTATION: REDIS
   MANAGER_CLIENT_BASEURL: '{{ .Values.global.loadbalancerURL }}/api/'
   RBAC_URL: '{{ .Values.global.loadbalancerURL }}/ng/api/'
-  ACCESS_CONTROL_BASE_URL: '{{ .Values.global.loadbalancerURL }}/authz/api/'
-  RESOURCE_GROUP_CLIENT_BASE_URL: '{{ .Values.global.loadbalancerURL }}/resourcegroup/api/'
+  ACCESS_CONTROL_BASE_URL: 'http://access-control.{{ .Release.Namespace }}.svc.cluster.local:9006/api/'
+  RESOURCE_GROUP_CLIENT_BASE_URL: 'http://platform-service.{{ .Release.Namespace }}.svc.cluster.local:9005/api/'
   NG_MANAGER_CLIENT_BASEURL: '{{ .Values.global.loadbalancerURL }}/ng/api/'
   PIPELINE_SERVICE_CLIENT_BASEURL: '{{ .Values.global.loadbalancerURL }}/pipeline/api/'
   TEMPLATE_SERVICE_CLIENT_BASEURL: '{{ .Values.global.loadbalancerURL }}/template/api/'
-  AUDIT_CLIENT_BASEURL: '{{ .Values.global.loadbalancerURL }}/audit/api/'
-  TEMPLATE_SERVICE_BASE_URL: '{{ .Values.global.loadbalancerURL }}/templates/api/'
+  AUDIT_CLIENT_BASEURL: 'http://platform-service.{{ .Release.Namespace }}.svc.cluster.local:9005/api/'
+  TEMPLATE_SERVICE_BASE_URL: http://template-service.{{ .Release.Namespace }}.svc.cluster.local:15002/api/
   MEMORY: {{ .Values.java.memory | quote }}
 
 kind: ConfigMap
