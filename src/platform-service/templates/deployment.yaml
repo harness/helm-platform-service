@@ -79,18 +79,23 @@ spec:
           httpGet:
             path: /api/health
             port: {{.Values.service.port}}
-          initialDelaySeconds: 100
-          timeoutSeconds: 10
+          timeoutSeconds: 2
           periodSeconds: 10
-          failureThreshold: 20
+          failureThreshold: 5
         livenessProbe:
           httpGet:
             path: /api/health
             port: {{.Values.service.port}}
-          initialDelaySeconds: 300
-          timeoutSeconds: 10
+          timeoutSeconds: 2
           periodSeconds: 10
-          failureThreshold: 20
+          failureThreshold: 5
+        startupProbe:
+          httpGet:
+            path: /api/health
+            port: {{.Values.service.port}}
+          timeoutSeconds: 2
+          periodSeconds: 10
+          failureThreshold: 25
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
