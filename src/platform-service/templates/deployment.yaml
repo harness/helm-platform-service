@@ -74,23 +74,7 @@ spec:
         envFrom:
         - configMapRef:
             name: platform-service
-
-        readinessProbe:
-          httpGet:
-            path: /api/health
-            port: {{.Values.service.port}}
-          initialDelaySeconds: 100
-          timeoutSeconds: 10
-          periodSeconds: 10
-          failureThreshold: 20
-        livenessProbe:
-          httpGet:
-            path: /api/health
-            port: {{.Values.service.port}}
-          initialDelaySeconds: 300
-          timeoutSeconds: 10
-          periodSeconds: 10
-          failureThreshold: 20
+        {{- toYaml .Values.probes | nindent 8}}
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
