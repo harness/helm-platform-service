@@ -21,7 +21,7 @@ data:
   ACCESS_CONTROL_ENABLED: 'true'
   LOGGING_LEVEL: {{ .Values.appLogLevel }}
   DISTRIBUTED_LOCK_IMPLEMENTATION: REDIS
-  MANAGER_CLIENT_BASEURL: 'http://harness-manager.harness-smp1.svc.cluster.local:9090/api/'
+  MANAGER_CLIENT_BASEURL: 'http://harness-manager:9090/api/'
   RBAC_URL: 'http://ng-manager:7090/'
   ACCESS_CONTROL_BASE_URL: 'http://access-control.{{ .Release.Namespace }}.svc.cluster.local:9006/api/'
   RESOURCE_GROUP_CLIENT_BASE_URL: 'http://platform-service.{{ .Release.Namespace }}.svc.cluster.local:9005/api/'
